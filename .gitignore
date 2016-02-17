@@ -1,0 +1,7 @@
+.Python
+bin/
+blog/
+include/
+lib/
+*.pyc
+*.pyo

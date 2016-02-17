@@ -122,14 +122,15 @@ def main():
         filename = os.path.join(args.directory, "".join(x for x in title if x not in "\/:*?<>|") + '.md')
 
         with open(filename, 'w') as file:
+            print("Date:", timestamp.isoformat(), file=file)
+            print("Tags:", ", ".join(tags), file=file)
+            print("", file=file)
+
             print("#", title, file=file)
             if len(authors) > 0:
                 print("By", ", ".join(authors), file=file)
             print("", file=file)
 
-            print("Date:", timestamp.isoformat(), file=file)
-            print("Tags:", ", ".join(tags), file=file)
-            print("", file=file)
             print(excerpt, file=file)
             print("[Read more...](%s)" % url, file=file)
 
